@@ -4,59 +4,74 @@
  */
 package t1;
 
+import java.awt.*;
+
 /**
  *
  * @author naoki
  */
-public class Trapezio {
-    private Double baseMenor;
-    private Double baseMaior;
-    private Double altura;
+public class Trapezio extends Component {
+    private int baseMenor, baseMaior, altura;
 
     public Trapezio() {
     }
 
-    public Trapezio(Double baseMenor, Double baseMaior, Double altura) {
+    public Trapezio(int baseMenor, int baseMaior, int altura) {
         this.baseMenor = baseMenor;
         this.baseMaior = baseMaior;
         this.altura = altura;
     }
 
-    public Double getBaseMenor() {
+    public int getBaseMenor() {
         return baseMenor;
     }
 
-    public void setBaseMenor(Double baseMenor) {
+    public void setBaseMenor(int baseMenor) {
         this.baseMenor = baseMenor;
     }
 
-    public Double getBaseMaior() {
+    public int getBaseMaior() {
         return baseMaior;
     }
 
-    public void setBaseMaior(Double baseMaior) {
+    public void setBaseMaior(int baseMaior) {
         this.baseMaior = baseMaior;
     }
 
-    public Double getAltura() {
+    public int getAltura() {
         return altura;
     }
 
-    public void setAltura(Double altura) {
+    public void setAltura(int altura) {
         this.altura = altura;
     }
     
-    public Double calcularArea() {
-        Double area = (baseMaior+baseMenor)*altura/2;
-        return area;
+    public int calcularArea() {
+        return (baseMaior+baseMenor)*altura/2;
     }
 
     @Override
     public String toString() {
-        return "Trapezio{" + "baseMenor=" + baseMenor + ", baseMaior=" + baseMaior + ", altura=" + altura + '}';
+        return "Trapezio{" +
+                "baseMenor=" + baseMenor +
+                ", baseMaior=" + baseMaior +
+                ", altura=" + altura +
+                '}';
     }
-    
-    public void printTrapezio() {
-        System.out.println(this.toString());
+    @Override
+    public void paint(Graphics g) {
+        Graphics2D g2 = (Graphics2D) g;
+        // draw GeneralPath (polygon)
+
+
+        int h = this.getParent().getHeight();
+        int w = this.getParent().getWidth();
+
+        Polygon polygon = new Polygon();
+        polygon.addPoint(w/2-(baseMenor/2), h/2-(altura/2));
+        polygon.addPoint(w/2+(baseMenor/2), h/2-(altura/2));
+        polygon.addPoint(w/2+(baseMaior/2), h/2+(altura/2));
+        polygon.addPoint(w/2-(baseMaior/2), h/2+(altura/2));
+        g2.draw(polygon);
     }
 }
