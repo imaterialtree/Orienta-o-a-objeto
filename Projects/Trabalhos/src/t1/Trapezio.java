@@ -12,6 +12,7 @@ import java.awt.*;
  */
 public class Trapezio extends Component {
     private int baseMenor, baseMaior, altura;
+    private int strokeWidth = 2;
 
     public Trapezio() {
     }
@@ -45,7 +46,15 @@ public class Trapezio extends Component {
     public void setAltura(int altura) {
         this.altura = altura;
     }
-    
+
+    public int getStrokeWidth() {
+        return strokeWidth;
+    }
+
+    public void setStrokeWidth(int strokeWidth) {
+        this.strokeWidth = strokeWidth;
+    }
+
     public int calcularArea() {
         return (baseMaior+baseMenor)*altura/2;
     }
@@ -62,7 +71,7 @@ public class Trapezio extends Component {
     public void paint(Graphics g) {
         Graphics2D g2 = (Graphics2D) g;
         // draw GeneralPath (polygon)
-
+        g2.setStroke(new BasicStroke(strokeWidth));
 
         int h = this.getParent().getHeight();
         int w = this.getParent().getWidth();

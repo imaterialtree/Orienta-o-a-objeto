@@ -11,6 +11,9 @@ package t1;
 public class Data {
     private int mes, dia, ano;
 
+    public Data() {
+    }
+
     public Data(int mes, int dia, int ano) {
         this.mes = mes;
         this.dia = dia;

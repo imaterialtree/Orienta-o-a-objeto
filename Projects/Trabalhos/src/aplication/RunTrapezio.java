@@ -16,14 +16,16 @@ public class RunTrapezio {
         int baseMaior = Integer.parseInt(JOptionPane.showInputDialog(null, "Digite o valor da BASE MAIOR"));
         int altura = Integer.parseInt(JOptionPane.showInputDialog(null, "Digite o valor da ALTURA"));
         Trapezio trapezio = new Trapezio(baseMenor, baseMaior, altura);
+        JOptionPane.showMessageDialog(null, trapezio);
         JFrame frame = initFrame();
+        JFrame frame1 = new JFrame();
         frame.add(trapezio);
 
         final String[] options = {"Alterar base menor", "Alterar base maior", "Alterar altura", "Sair"};
         final int SAIR = Arrays.asList(options).indexOf("Sair");
         int op;
         do {
-            op = JOptionPane.showOptionDialog(null, "Escolha uma opção", "Trapézio", 0, JOptionPane.PLAIN_MESSAGE, null, options, null);
+            op = JOptionPane.showOptionDialog(frame1, "Escolha uma opção", "Trapézio", 0, JOptionPane.PLAIN_MESSAGE, null, options, null);
             System.out.println(op);
             switch (op) {
                 case 0 -> {
@@ -54,11 +56,12 @@ public class RunTrapezio {
                 }
             }
         } while (op!=SAIR && op!=-1);
+        frame.dispose();
 
     }
     static private JFrame initFrame() {
         JFrame frame = new JFrame();
-        frame.setSize(400, 400);
+        frame.setSize(500, 500);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);
         return frame;

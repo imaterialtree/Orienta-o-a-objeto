@@ -8,14 +8,15 @@ public class RunData {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("Digite o dia");
-        int dia = sc.nextInt();
-        System.out.println("Digite o mês");
-        int mes = sc.nextInt();
-        System.out.println("Digite o ano");
-        int ano = sc.nextInt();
+        Data data = new Data();
 
-        Data data = new Data(dia, mes, ano);
+        System.out.println("Digite o dia");
+        data.setDia(sc.nextInt());
+        System.out.println("Digite o mês");
+        data.setMes(sc.nextInt());
+        System.out.println("Digite o ano");
+        data.setAno(sc.nextInt());
+
 
         System.out.print("A data é ");
         data.displayData();
