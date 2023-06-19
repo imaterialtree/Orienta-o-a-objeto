@@ -6,7 +6,7 @@ import javax.swing.*;
 import java.util.Arrays;
 
 public class RunCalculadora {
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
         int qtdNum = (int) JOptionPane.showInputDialog(
                 null, "Quantos números?",
                 "Calculadora", JOptionPane.PLAIN_MESSAGE,
