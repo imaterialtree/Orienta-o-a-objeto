@@ -4,7 +4,7 @@
  */
 package aplication;
 
-import t1.Trapezio;
+import t2.Trapezio;
 
 import javax.swing.*;
 import java.util.Arrays;

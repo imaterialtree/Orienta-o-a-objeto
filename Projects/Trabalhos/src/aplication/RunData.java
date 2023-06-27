@@ -1,6 +1,6 @@
 package aplication;
 
-import t1.Data;
+import t2.Data;
 
 import java.util.Scanner;
 

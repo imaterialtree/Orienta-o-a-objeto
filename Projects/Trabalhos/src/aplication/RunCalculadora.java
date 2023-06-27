@@ -1,6 +1,6 @@
 package aplication;
 
-import t1.Calculadora;
+import t2.Calculadora;
 
 import javax.swing.*;
 import java.util.Arrays;
