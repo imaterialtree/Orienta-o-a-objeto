@@ -1,4 +1,4 @@
-package t2;
+package t2.classes;
 
 public class Calculadora {
     

@@ -1,6 +1,6 @@
-package aplication;
+package t2.run;
 
-import t2.Data;
+import t2.classes.Data;
 
 import java.util.Scanner;
 
